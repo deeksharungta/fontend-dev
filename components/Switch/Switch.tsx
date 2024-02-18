@@ -5,14 +5,24 @@ import styles from "./Switch.module.scss";
 const Switch = () => {
   const [activeButton, setActiveButton] = useState<string>("left");
 
+  const activeButtonHandler = (current: string) => {
+    setTimeout(() => {
+      setActiveButton(current);
+    }, 200);
+  };
+
   return (
     <div className={styles.switch}>
       <span
         style={{ left: `${activeButton === "right" ? "50%" : ""}` }}
-        className={styles.active}
+        className={`${styles.active} ${
+          activeButton === "right"
+            ? styles["slide-left"]
+            : styles["slide-right"]
+        }`}
       ></span>
       <button
-        onClick={() => setActiveButton("left")}
+        onClick={() => activeButtonHandler("left")}
         className={`${styles["switch-button"]} ${
           activeButton === "left" && styles["active-btn"]
         }`}
@@ -20,7 +30,7 @@ const Switch = () => {
         React
       </button>
       <button
-        onClick={() => setActiveButton("right")}
+        onClick={() => activeButtonHandler("right")}
         className={`${styles["switch-button"]} ${
           activeButton === "right" && styles["active-btn"]
         }`}
