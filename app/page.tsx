@@ -18,10 +18,10 @@ export default function Home() {
 
   useEffect(() => {
     const primaryColor = color && color;
-    const secondaryColor = shades && shades[3];
-    const gradientColor = shades && shades[1];
-    const tertiaryColor = shades && shades[1];
-    const clockColor = shades && shades[4];
+    const secondaryColor = shades && shades[4];
+    const gradientColor = shades && shades[2];
+    const tertiaryColor = shades && shades[2];
+    const clockColor = shades && shades[5];
     const overlayColor = `${primaryColor}61`;
     const checkboxColor = `${shades[5].slice(0, -1)}, 0.4)`;
 

@@ -34,7 +34,7 @@ export function generateShadesAndTints(color: string): string[] {
   }
 
   const shadesAndTints: string[] = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 1; i <= 10; i++) {
     const lightness = (i / 10) * 80 + 10;
     shadesAndTints.push(
       `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(
