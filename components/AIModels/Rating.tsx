@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import styles from "./Rating.module.scss";
 
 type RatingProps = {
   rating: number;
@@ -15,8 +16,8 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
         stars.push(
           <Image
             src="/rated-star.svg"
-            width={20}
-            height={20}
+            width={16}
+            height={16}
             alt="rating star"
             key={i}
           />
@@ -25,8 +26,8 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
         stars.push(
           <Image
             src="/star.svg"
-            width={20}
-            height={20}
+            width={16}
+            height={16}
             alt="rating star"
             key={i}
           />
@@ -37,7 +38,7 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
     return stars;
   };
 
-  return <div>{renderStars()}</div>;
+  return <div className={styles.container}>{renderStars()}</div>;
 };
 
 export default Rating;

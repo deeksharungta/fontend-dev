@@ -1,9 +1,11 @@
 .container {
+  width: 100%;
   height: 11.2rem;
   padding: 2rem 4rem;
   border-radius: 0px 0px 12px 12px;
   background: #17171a;
   overflow: auto;
+  animation: slide-down 300ms ease-out forwards;
 
   p {
     font-size: 1.4rem;
@@ -12,5 +14,28 @@
     letter-spacing: 0em;
     text-align: left;
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translate(0, -20%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
 }

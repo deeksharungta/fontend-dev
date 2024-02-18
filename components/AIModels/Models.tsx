@@ -99,7 +99,7 @@ const Models = () => {
             <td>Version</td>
             <td>License</td>
             <td>Contributors</td>
-            <td>Ratings</td>
+            <td>Rating</td>
           </tr>
         </thead>
         <tbody>
