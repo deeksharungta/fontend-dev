@@ -1,16 +1,30 @@
 .container {
   background: #26252a;
-  width: 57.4rem;
+  // min-width: fit-content;
   border-radius: 12px;
   padding: 0.4rem;
-  flex-grow: 1;
-  max-height: 59.7rem;
+  flex: 1;
+  height: 59.7rem;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
 
   .inner-container {
     background: #201f23;
     border-radius: 12px 12px 0 0;
     padding: 2.8rem 2.8rem 0 2.8rem;
     position: relative;
+    min-width: 56.6rem;
 
     h2 {
       font-size: 2.4rem;

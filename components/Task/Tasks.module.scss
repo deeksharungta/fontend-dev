@@ -3,7 +3,9 @@
   background: #26252a;
   width: fit-content;
   border-radius: 12px;
-  flex-grow: 1;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 
   h2 {
     font-size: 2.4rem;
