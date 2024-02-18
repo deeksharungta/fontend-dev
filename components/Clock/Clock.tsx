@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import styles from "./Clock.module.scss";
-import { Draggable } from "react-beautiful-dnd";
 
 type ClockProps = {
   onDragStart?: (value: any) => void;

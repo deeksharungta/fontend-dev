@@ -4,7 +4,6 @@ import Image from "next/image";
 import styles from "./AskAIButton.module.scss";
 import { useState } from "react";
 import AskAI from "./AskAI";
-import Modal from "./Modal";
 
 const AskAIButton = () => {
   const [showAskAI, setShowAskAI] = useState(false);
