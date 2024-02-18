@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import ColorContextProvider from "@/store/color-context";
+import ColorContextProvider from "@/store/color-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <ColorContextProvider>
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-    // </ColorContextProvider>
+    <ColorContextProvider>
+      <html lang="en">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </ColorContextProvider>
   );
 }

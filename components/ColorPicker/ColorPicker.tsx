@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
 import { HuePicker } from "react-color";
 import styles from "./ColorPicker.module.scss";
+import { ColorContext } from "@/store/color-context";
 
 const ColorPicker = () => {
-  const [color, setColor] = useState("#652BFC");
+  const { color, updateColor } = useContext(ColorContext);
 
   return (
     <div className={styles["outer-container"]}>
@@ -15,7 +16,7 @@ const ColorPicker = () => {
           height="16px"
           color={color}
           onChange={(color) => {
-            setColor(color.hex);
+            updateColor(color.hex);
           }}
         />
       </div>
