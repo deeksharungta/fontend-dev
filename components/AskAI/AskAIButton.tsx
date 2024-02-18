@@ -8,6 +8,14 @@ import AskAI from "./AskAI";
 const AskAIButton = () => {
   const [showAskAI, setShowAskAI] = useState(false);
 
+  const clickHandler = () => {
+    if (showAskAI) {
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+    }
+    setShowAskAI((prev) => !prev);
+  };
+
   return (
     <>
       <button
@@ -15,7 +23,7 @@ const AskAIButton = () => {
           background: `${showAskAI ? "#141417" : "var(--primary-color)"}`,
         }}
         className={styles.btn}
-        onClick={() => setShowAskAI((prev) => !prev)}
+        onClick={clickHandler}
       >
         <Image
           src={`${showAskAI ? "close.svg" : "stars_two.svg"}`}
