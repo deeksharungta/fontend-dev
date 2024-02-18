@@ -38,7 +38,7 @@
   .circle {
     z-index: 3;
     position: absolute;
-    background-color: #3f3db6;
+    background-color: var(--clock-color);
     width: 6.67px;
     height: 6.67px;
     border-radius: 50%;
@@ -92,8 +92,8 @@
     z-index: 3;
     position: absolute;
     height: 5.7rem;
-    border: 1px solid #3f3db6;
-    background-color: #3f3db6;
+    border: 1px solid var(--clock-color);
+    background-color: var(--clock-color);
     top: 24px;
     left: calc(50% - 1px);
     transform-origin: 49% 46px;

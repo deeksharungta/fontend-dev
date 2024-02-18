@@ -86,26 +86,26 @@
         0% {
           border: 1px solid #fff;
           background: #fff;
-          box-shadow: 0px 0px 0px 4px #5e5adb66;
+          box-shadow: 0px 0px 0px 4px var(--checkbox-color);
         }
         25% {
-          box-shadow: 0px 0px 0px 4px #5e5adb66;
+          box-shadow: 0px 0px 0px 4px var(--checkbox-color);
         }
         100% {
           background: url("../../public/rectangle.svg") no-repeat center;
-          border-color: #764fff;
-          background-color: #764fff;
+          border-color: var(--secondary-color);
+          background-color: var(--secondary-color);
         }
       }
 
       @keyframes unChecked {
         0% {
           background: url("../../public/rectangle.svg") no-repeat center;
-          border-color: #764fff;
-          background-color: #764fff;
+          border-color: var(--secondary-color);
+          background-color: var(--secondary-color);
         }
         25% {
-          box-shadow: 0px 0px 0px 4px #5e5adb66;
+          box-shadow: 0px 0px 0px 4px var(--checkbox-color);
         }
         100% {
           border: 1px solid #fff;

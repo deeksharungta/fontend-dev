@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import styles from "./DragDrop.module.scss";
 import Clock from "../Clock/Clock";
 import Image from "next/image";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const DragDrop = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -20,51 +19,26 @@ const DragDrop = () => {
   const hours = String(((currentTime.getHours() + 11) % 12) + 1);
   const minutes = String(currentTime.getMinutes());
 
-  const handleOnDragEnd = (result: any) => {
-    console.log(result);
-  };
+  function drag(ev: any) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev: any) {
+    ev.preventDefault();
+    ev.target.appendChild(document.getElementById("reference"));
+  }
 
   return (
-    <DragDropContext onDragEnd={handleOnDragEnd}>
-      <div className={styles.container}>
-        <Droppable droppableId="container">
-          {(provided) => (
-            <div
-              className={styles["clock-container"]}
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-            >
-              {provided.placeholder}
-              <Draggable draggableId="clock" index={0}>
-                {(provided) => (
-                  <div
-                    ref={provided.innerRef}
-                    {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                  >
-                    <Clock />
-                  </div>
-                )}
-              </Draggable>
-            </div>
-          )}
-        </Droppable>
-
-        <p>{`${hours.padStart(2, "0")}:${minutes.padStart(2, "0")}`}</p>
-        <Image src="/arrow.svg" height={32} width={16} alt="arrow" />
-        <Droppable droppableId="drop">
-          {(provided) => (
-            <div
-              className={styles.drop}
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-            >
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
+    <div className={styles.container}>
+      <div className={styles["clock-container"]}>
+        <Clock id="reference" onDragStart={drag} draggable={true} />
       </div>
-    </DragDropContext>
+
+      <p>{`${hours.padStart(2, "0")}:${minutes.padStart(2, "0")}`}</p>
+      <Image src="/arrow.svg" height={32} width={16} alt="arrow" />
+
+      <div id="target" className={styles.drop} onDragOver={drop}></div>
+    </div>
   );
 };
 

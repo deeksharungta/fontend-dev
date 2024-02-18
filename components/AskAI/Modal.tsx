@@ -11,6 +11,8 @@ type ModalProps = {
 const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
   const closeHandler = () => {
     onClose && onClose();
+    document.body.style.overflow = "unset";
+    document.documentElement.style.overflow = "unset";
   };
 
   useEffect(() => {

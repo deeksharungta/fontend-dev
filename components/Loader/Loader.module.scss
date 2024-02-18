@@ -15,7 +15,7 @@
     border-radius: 50%;
     background: conic-gradient(
       from 180deg at 50% 50%,
-      #9681ff 0deg,
+      var(--tertiary-color) 0deg,
       rgba(150, 129, 255, 0) 90deg,
       rgba(150, 129, 255, 0) 360deg
     );
@@ -32,7 +32,7 @@
   }
 
   .rings {
-    border: 1px solid #9681ff;
+    border: 1px solid var(--tertiary-color);
     border-radius: 50%;
     position: absolute;
     height: 5.6rem;

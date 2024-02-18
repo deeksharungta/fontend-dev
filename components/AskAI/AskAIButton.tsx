@@ -12,7 +12,9 @@ const AskAIButton = () => {
   return (
     <>
       <button
-        style={{ background: `${showAskAI ? "#141417" : "#652bfc"}` }}
+        style={{
+          background: `${showAskAI ? "#141417" : "var(--primary-color)"}`,
+        }}
         className={styles.btn}
         onClick={() => setShowAskAI((prev) => !prev)}
       >
