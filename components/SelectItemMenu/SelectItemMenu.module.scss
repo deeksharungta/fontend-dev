@@ -42,5 +42,88 @@
     background: #17171a;
     position: absolute;
     top: 100%;
+
+    .item {
+      display: flex;
+      gap: 8px;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+
+      input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        height: 1.6rem;
+        width: 1.6rem;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        background: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        &:hover {
+          background-color: #fff;
+          background-image: url("../../public/rectangle-hover.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          box-shadow: 0px 0px 0px 1px #464f6052;
+        }
+
+        &:checked {
+          transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+          animation: checked 0.6s forwards;
+        }
+
+        &:not(:checked) {
+          transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+          animation: unChecked 0.6s forwards;
+        }
+      }
+
+      @keyframes checked {
+        0% {
+          border: 1px solid #fff;
+          background: #fff;
+          box-shadow: 0px 0px 0px 4px #5e5adb66;
+        }
+        25% {
+          box-shadow: 0px 0px 0px 4px #5e5adb66;
+        }
+        100% {
+          background: url("../../public/rectangle.svg") no-repeat center;
+          border-color: #764fff;
+          background-color: #764fff;
+        }
+      }
+
+      @keyframes unChecked {
+        0% {
+          background: url("../../public/rectangle.svg") no-repeat center;
+          border-color: #764fff;
+          background-color: #764fff;
+        }
+        25% {
+          box-shadow: 0px 0px 0px 4px #5e5adb66;
+        }
+        100% {
+          border: 1px solid #fff;
+          background-color: #fff;
+        }
+      }
+
+      label {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #ffffff99;
+      }
+
+      &:hover {
+        gap: 12px;
+        transition: all 0.1s ease-in-out;
+        background: #201f23;
+      }
+    }
   }
 }

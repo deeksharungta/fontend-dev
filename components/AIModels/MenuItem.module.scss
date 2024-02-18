@@ -18,12 +18,53 @@
     justify-content: center;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 
-    &:checked {
-      background: url("../../public/select.svg") no-repeat;
+    &:hover {
+      background-color: #fff;
+      background-image: url("../../public/select-hover.svg");
+      background-repeat: no-repeat;
       background-position: center;
+      box-shadow: 0px 0px 0px 1px #464f6052;
+    }
+
+    &:checked {
+      transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+      animation: checked 0.6s forwards;
+    }
+
+    &:not(:checked) {
+      transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+      animation: unChecked 0.6s forwards;
+    }
+  }
+
+  @keyframes checked {
+    0% {
+      border: 1px solid #fff;
+      background: #fff;
+      box-shadow: 0px 0px 0px 4px #5e5adb66;
+    }
+    25% {
+      box-shadow: 0px 0px 0px 4px #5e5adb66;
+    }
+    100% {
+      background: url("../../public/select.svg") no-repeat center;
       border-color: #764fff;
       background-color: #764fff;
-      transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+    }
+  }
+
+  @keyframes unChecked {
+    0% {
+      background: url("../../public/select.svg") no-repeat center;
+      border-color: #764fff;
+      background-color: #764fff;
+    }
+    25% {
+      box-shadow: 0px 0px 0px 4px #5e5adb66;
+    }
+    100% {
+      border: 1px solid #fff;
+      background-color: #fff;
     }
   }
 
