@@ -20,7 +20,9 @@ const DragDrop = () => {
   const hours = String(((currentTime.getHours() + 11) % 12) + 1);
   const minutes = String(currentTime.getMinutes());
 
-  const handleOnDragEnd = () => {};
+  const handleOnDragEnd = (result: any) => {
+    console.log(result);
+  };
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
@@ -32,6 +34,7 @@ const DragDrop = () => {
               ref={provided.innerRef}
               {...provided.droppableProps}
             >
+              {provided.placeholder}
               <Draggable draggableId="clock" index={0}>
                 {(provided) => (
                   <div
@@ -43,10 +46,10 @@ const DragDrop = () => {
                   </div>
                 )}
               </Draggable>
-              {provided.placeholder}
             </div>
           )}
         </Droppable>
+
         <p>{`${hours.padStart(2, "0")}:${minutes.padStart(2, "0")}`}</p>
         <Image src="/arrow.svg" height={32} width={16} alt="arrow" />
         <Droppable droppableId="drop">
