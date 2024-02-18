@@ -1,0 +1,50 @@
+.table-row {
+  padding: 0.8rem 2.8rem;
+  border-radius: 12px;
+  background: #26252a;
+  // display: flex;
+  align-items: center;
+
+  .model-name {
+    display: flex;
+    gap: 8px;
+
+    img {
+      border-radius: 50%;
+    }
+
+    span {
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+
+  .version,
+  .license {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffffff99;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .contributors,
+  .ratings {
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 0.8rem;
+  }
+
+  &:hover,
+  &.active {
+    background: #201f23;
+  }
+
+  &.active {
+    border-radius: 12px 12px 0 0;
+  }
+}

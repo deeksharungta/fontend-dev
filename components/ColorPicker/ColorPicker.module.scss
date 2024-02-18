@@ -1,0 +1,17 @@
+.outer-container {
+  width: 302px;
+  height: 48px;
+  border-radius: 35.5px;
+  background: #26252a;
+  box-shadow: 1px 2px 2px 0px #00000040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inner-container {
+    width: 268px;
+    height: 16px;
+    border-radius: 36px;
+    overflow: hidden;
+  }
+}

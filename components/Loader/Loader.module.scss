@@ -1,0 +1,69 @@
+.container {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  overflow: hidden;
+
+  .scanner,
+  .rings {
+    transform-origin: center;
+  }
+
+  .scanner {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #9681ff 0deg,
+      rgba(150, 129, 255, 0) 90deg,
+      rgba(150, 129, 255, 0) 360deg
+    );
+    animation: rotateScanner 8s linear infinite;
+  }
+
+  @keyframes rotateScanner {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .rings {
+    border: 1px solid #9681ff;
+    border-radius: 50%;
+    position: absolute;
+    height: 5.6rem;
+    width: 5.6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: increaseSize 8s infinite;
+    opacity: 0;
+  }
+
+  @keyframes increaseSize {
+    0% {
+      height: 5.6rem;
+      width: 5.6rem;
+      opacity: 0;
+    }
+    25% {
+      height: 12rem;
+      width: 12rem;
+      opacity: 1;
+    }
+    50% {
+      height: 18.4rem;
+      width: 18.4rem;
+      opacity: 0;
+    }
+    100% {
+      height: 5.6rem;
+      width: 5.6rem;
+      opacity: 1;
+    }
+  }
+}

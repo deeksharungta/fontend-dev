@@ -1,0 +1,45 @@
+.container {
+  width: 498px;
+  height: 160px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+
+  .img {
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+    background: url("../../public/boy.jpeg") center/cover;
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    cursor: ew-resize;
+
+    .slider-thumb {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 0.4rem;
+      height: 5.7rem;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+    background: #652bfc61;
+  }
+}

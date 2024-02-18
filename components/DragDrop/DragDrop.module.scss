@@ -1,0 +1,54 @@
+.container {
+  height: 59.7rem;
+  width: 26.8rem;
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(
+      360deg,
+      #652bfc 17.25%,
+      rgba(100, 102, 242, 0) 100%
+    ),
+    url("../../public/clock-background.jpeg") center/cover;
+
+  .clock-container {
+    cursor: pointer;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -12%);
+  }
+
+  p {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-top: 21rem;
+  }
+
+  img {
+    margin-top: 4rem;
+  }
+
+  .drop {
+    width: 132px;
+    height: 132px;
+    border-radius: 100%;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+      );
+    margin-top: 8rem;
+    border: 1px dashed #ffffff4d;
+  }
+}

@@ -1,0 +1,40 @@
+.switch {
+  padding: 6px;
+  border-radius: 12px;
+  background: #201f23;
+  transition: 0.3s ease all;
+  width: fit-content;
+  position: relative;
+
+  .switch-button {
+    width: 11.2rem;
+    padding: 1rem 2.4rem;
+    border-radius: 8px;
+    background: transparent;
+    color: #ffffff99;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    transition: 0.3s ease all;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .active {
+    color: #151515;
+    background-color: #141417;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: calc(50% - 6px);
+    height: calc(100% - 12px);
+    border-radius: 8px;
+    z-index: 0;
+    transition: 0.3s ease-out all;
+
+    &-btn {
+      color: #ffffff;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.contributors {
+  display: flex;
+
+  img {
+    margin-right: -1rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

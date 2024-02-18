@@ -1,0 +1,19 @@
+.container {
+  padding: 3.2rem;
+  background: #26252a;
+  width: fit-content;
+  border-radius: 12px;
+  flex-grow: 1;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 2.4rem;
+  }
+
+  .tasks {
+    display: flex;
+    gap: 1.6rem;
+    flex-direction: column;
+  }
+}
