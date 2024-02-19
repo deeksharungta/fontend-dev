@@ -75,7 +75,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // blockRef.current!.style.width = blockRef.current!.offsetWidth + "px";
+    blockRef.current!.style.width = blockRef.current!.offsetWidth + "px";
     return () => {
       document.onmousemove = null;
       document.onmouseup = null;
