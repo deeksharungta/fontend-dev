@@ -1,22 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./BeforeAfter.module.scss";
 
 const BeforeAfter = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
-
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
-
-  const handleMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!isDragging) return;
-
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = Math.max(0, Math.min(event.clientX - rect.left, rect.width));
-    const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
-
-    setSliderPosition(percent);
-  };
 
   const handleMouseDown = () => {
     setIsDragging(true);
@@ -26,8 +16,36 @@ const BeforeAfter = () => {
     setIsDragging(false);
   };
 
+  useEffect(() => {
+    const handleMove = (event: MouseEvent) => {
+      if (!containerRef.current || !isDragging || !event) return;
+
+      const containerLeft = containerRef.current.getBoundingClientRect().left;
+      const containerWidth = containerRef?.current?.offsetWidth;
+      const x = Math.max(
+        0,
+        Math.min(event.clientX - containerLeft, containerWidth)
+      );
+      const percent = Math.max(0, Math.min((x / containerWidth) * 100, 100));
+
+      setSliderPosition(percent);
+    };
+    document.onmousemove = handleMove;
+    window.onmouseup = () => {
+      setIsDragging(false);
+    };
+
+    return () => {
+      document.removeEventListener("mousemove", handleMove);
+    };
+  }, [isDragging]);
+
   return (
-    <div onMouseMove={handleMove} className={styles.container}>
+    <div
+      ref={containerRef}
+      onMouseUp={handleMouseUp}
+      className={styles.container}
+    >
       <div className={styles.img} />
       <div
         onMouseDown={handleMouseDown}
