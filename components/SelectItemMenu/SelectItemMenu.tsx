@@ -2,32 +2,38 @@
 
 import Image from "next/image";
 import styles from "./SelectItemMenu.module.scss";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MenuItem from "../AIModels/MenuItem";
+import useClickOutside from "@/hooks/useClickOutside";
+
+const menuItemsInitialState = [
+  {
+    id: 1,
+    itemName: "UX/UI Design",
+    checked: true,
+  },
+  {
+    id: 2,
+    itemName: "Frontend",
+    checked: false,
+  },
+  {
+    id: 3,
+    itemName: "Backend",
+    checked: true,
+  },
+];
 
 const SelectItemMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [selectAll, setSelectAll] = useState(false);
 
-  const menuItemsInitialState = [
-    {
-      id: 1,
-      itemName: "UX/UI Design",
-      checked: true,
-    },
-    {
-      id: 2,
-      itemName: "Frontend",
-      checked: false,
-    },
-    {
-      id: 3,
-      itemName: "Backend",
-      checked: true,
-    },
-  ];
-
   const [menuItems, setMenuItems] = useState(menuItemsInitialState);
+
+  const wrapperRef = useRef(null);
+  useClickOutside(wrapperRef, () => {
+    setShowMenu(false);
+  });
 
   const handleSelectAll = () => {
     const updatedMenuItems = menuItems.map((item) => ({
@@ -47,7 +53,7 @@ const SelectItemMenu = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={wrapperRef}>
       <button
         className={styles.button}
         onClick={() => setShowMenu((prev) => !prev)}
