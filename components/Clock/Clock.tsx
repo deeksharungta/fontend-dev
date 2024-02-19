@@ -20,6 +20,8 @@ const Clock: React.FC<ClockProps> = ({ onDragStart, id, draggable }) => {
     }, 1000);
 
     return () => clearInterval(intervalId);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function updateClock(hours: number, minutes: number, seconds: number) {
