@@ -8,6 +8,17 @@
   position: absolute;
   left: 30px;
   top: calc(100% + 8px);
+  animation: slide-down 200ms ease-out forwards;
+
+  @keyframes slide-down {
+    from {
+      transform: translate(0, -10%);
+    }
+    to {
+      transform: translate(0, 0);
+    }
+  }
+
   .item {
     display: flex;
     gap: 8px;
