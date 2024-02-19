@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import Tasks from "@/components/Task/Tasks";
 import DragDrop from "@/components/DragDrop/DragDrop";
 import BeforeAfter from "@/components/BeforeAfter/BeforeAfter";
