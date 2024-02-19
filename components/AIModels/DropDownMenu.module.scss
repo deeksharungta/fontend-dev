@@ -48,13 +48,11 @@
       }
 
       &:checked {
-        // transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
         transition: all 0.3s ease-out;
         animation: checked 0.3s forwards;
       }
 
       &:not(:checked) {
-        // transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
         transition: all 0.3s ease-out;
         animation: unChecked 0.3s forwards;
       }

@@ -4,47 +4,46 @@ import { useState } from "react";
 import MenuItem from "./MenuItem";
 import styles from "./DropDownMenu.module.scss";
 
+const menuItemsInitialState = [
+  {
+    id: 1,
+    itemName: "UX/UI Design",
+    checked: true,
+  },
+  {
+    id: 2,
+    itemName: "Frontend",
+    checked: true,
+  },
+  {
+    id: 3,
+    itemName: "Backend",
+    checked: true,
+  },
+  {
+    id: 4,
+    itemName: "Full Stack",
+    checked: false,
+  },
+  {
+    id: 5,
+    itemName: "Graphic Designer",
+    checked: false,
+  },
+  {
+    id: 6,
+    itemName: "Web Designer",
+    checked: false,
+  },
+  {
+    id: 7,
+    itemName: "QA",
+    checked: false,
+  },
+];
+
 const DropDownMenu = () => {
   const [selectAll, setSelectAll] = useState(false);
-
-  const menuItemsInitialState = [
-    {
-      id: 1,
-      itemName: "UX/UI Design",
-      checked: true,
-    },
-    {
-      id: 2,
-      itemName: "Frontend",
-      checked: true,
-    },
-    {
-      id: 3,
-      itemName: "Backend",
-      checked: true,
-    },
-    {
-      id: 4,
-      itemName: "Full Stack",
-      checked: false,
-    },
-    {
-      id: 5,
-      itemName: "Graphic Designer",
-      checked: false,
-    },
-    {
-      id: 6,
-      itemName: "Web Designer",
-      checked: false,
-    },
-    {
-      id: 7,
-      itemName: "QA",
-      checked: false,
-    },
-  ];
-
   const [menuItems, setMenuItems] = useState(menuItemsInitialState);
 
   const handleSelectAll = () => {

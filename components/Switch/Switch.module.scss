@@ -32,18 +32,17 @@
     height: calc(100% - 12px);
     border-radius: 8px;
     z-index: 0;
-    transition: 0.2s ease-out all;
 
     &-btn {
       color: #ffffff;
     }
 
     &.slide-right {
-      animation: slide-right 0.2s ease-out forwards;
+      animation: slide-right 0.2s forwards;
     }
 
     &.slide-left {
-      animation: slide-left 0.2s ease-out forwards;
+      animation: slide-left 0.2s forwards;
     }
   }
 
