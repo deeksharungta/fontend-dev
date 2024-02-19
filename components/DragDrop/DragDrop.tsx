@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const DragDrop = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [showDiv, setShowDiv] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -25,19 +26,24 @@ const DragDrop = () => {
 
   function drop(ev: any) {
     ev.preventDefault();
+    if (ev.target.id === "target2") setShowDiv(true);
     ev.target.appendChild(document.getElementById("reference"));
   }
 
   return (
     <div className={styles.container}>
-      <div className={styles["clock-container"]}>
-        <Clock id="reference" onDragStart={drag} draggable={true} />
-      </div>
+      <div
+        id="target1"
+        onDragOver={drop}
+        className={styles.drop}
+        style={{ display: `${showDiv ? "block" : "none"}` }}
+      ></div>
 
+      <Clock id="reference" onDragStart={drag} draggable={true} />
       <p>{`${hours.padStart(2, "0")}:${minutes.padStart(2, "0")}`}</p>
       <Image src="/arrow.svg" height={32} width={16} alt="arrow" />
 
-      <div id="target" className={styles.drop} onDragOver={drop}></div>
+      <div id="target2" className={styles.drop} onDragOver={drop}></div>
     </div>
   );
 };
