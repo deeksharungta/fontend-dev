@@ -33,7 +33,7 @@ const Tasks: React.FC = () => {
       <h2>Today&apos;s Task</h2>
       <div className={styles.tasks}>
         {tasks.map((task) => (
-          <Task key={task.id} taskName={task.taskName} />
+          <Task key={task.id} id={task.id} taskName={task.taskName} />
         ))}
       </div>
     </div>

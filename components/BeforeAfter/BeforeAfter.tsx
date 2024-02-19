@@ -27,11 +27,7 @@ const BeforeAfter = () => {
   };
 
   return (
-    <div
-      onMouseMove={handleMove}
-      onMouseLeave={handleMouseUp}
-      className={styles.container}
-    >
+    <div onMouseMove={handleMove} className={styles.container}>
       <div className={styles.img} />
       <div
         onMouseDown={handleMouseDown}
