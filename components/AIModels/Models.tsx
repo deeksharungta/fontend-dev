@@ -5,9 +5,6 @@ import DropDownMenu from "./DropDownMenu";
 import Model from "./Model";
 import styles from "./Models.module.scss";
 import Image from "next/image";
-import Rating from "./Rating";
-import Contributor from "./Contributor";
-import Detail from "./Detail";
 
 const Models = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -79,7 +76,12 @@ const Models = () => {
   ];
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onClick={() => {
+        if (showMenu) setShowMenu(false);
+      }}
+    >
       <div className={styles["inner-container"]}>
         <h2>AI Models</h2>
         <button

@@ -36,16 +36,18 @@ export default function Home() {
 
   const blockRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
-  // const blocksRef = useRef<HTMLDivElement>(null);
-  // const sliderVerRef = useRef<HTMLDivElement>(null);
+  const blocksRef = useRef<HTMLDivElement>(null);
+  const sliderVerRef = useRef<HTMLDivElement>(null);
 
   const dragMouseDown = (e: any) => {
     if (!blockRef.current || !sliderRef.current) return;
 
     let dragX = e.clientX;
+
     document.onmousemove = (event) => {
-      blockRef.current!.style.width =
-        blockRef.current!.offsetWidth - event.clientX + dragX + "px";
+      const newWidth = blockRef.current!.offsetWidth - event.clientX + dragX;
+      if (newWidth < 520) return;
+      blockRef.current!.style.width = newWidth + "px";
       dragX = event.clientX;
     };
 
@@ -55,21 +57,21 @@ export default function Home() {
     };
   };
 
-  // const dragMouseDowns = (e: any) => {
-  //   if (!blocksRef.current || !sliderVerRef.current) return;
+  const dragMouseDowns = (e: any) => {
+    if (!blocksRef.current || !sliderVerRef.current) return;
 
-  //   let dragY = e.clientY;
-  //   document.onmousemove = (event) => {
-  //     blocksRef.current!.style.height =
-  //       blocksRef.current!.offsetHeight + event.clientY - dragY + "px";
-  //     dragY = event.clientY;
-  //   };
+    let dragY = e.clientY;
+    document.onmousemove = (event) => {
+      blocksRef.current!.style.height =
+        blocksRef.current!.offsetHeight + event.clientY - dragY + "px";
+      dragY = event.clientY;
+    };
 
-  //   document.onmouseup = () => {
-  //     document.onmousemove = null;
-  //     document.onmouseup = null;
-  //   };
-  // };
+    document.onmouseup = () => {
+      document.onmousemove = null;
+      document.onmouseup = null;
+    };
+  };
 
   useEffect(() => {
     blockRef.current!.style.width = blockRef.current!.offsetWidth + "px";
@@ -100,13 +102,13 @@ export default function Home() {
           </div>
           <DragDrop />
         </div>
-        {/* <div
+        <div
           className={styles["slider-horizontal"]}
           ref={sliderVerRef}
           onMouseDown={dragMouseDowns}
         >
           <div className={styles["slider-thumb-horizontal"]} />
-        </div> */}
+        </div>
         <div className={styles.second}>
           <BeforeAfter />
           <Loader />
