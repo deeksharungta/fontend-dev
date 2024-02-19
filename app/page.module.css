@@ -13,8 +13,8 @@
   }
 
   .content {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     background: #17171a;
     border-radius: 2.4rem;
     padding: 1.6rem;
