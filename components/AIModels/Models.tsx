@@ -76,12 +76,7 @@ const Models = () => {
   ];
 
   return (
-    <div
-      className={styles.container}
-      onClick={() => {
-        if (showMenu) setShowMenu(false);
-      }}
-    >
+    <div className={styles.container}>
       <div className={styles["inner-container"]}>
         <h2>AI Models</h2>
         <button

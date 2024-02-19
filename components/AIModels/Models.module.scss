@@ -4,7 +4,9 @@
   border-radius: 12px;
   padding: 0.4rem;
   flex: 1;
-  height: 59.7rem;
+  height: 100%;
+  // max-height: 59.7rem;
+  min-height: 0;
   overflow-x: auto;
 
   &::-webkit-scrollbar {

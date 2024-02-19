@@ -13,6 +13,8 @@
   }
 
   .content {
+    display: flex;
+    flex-direction: column;
     background: #17171a;
     border-radius: 2.4rem;
     padding: 1.6rem;
@@ -24,9 +26,11 @@
       display: flex;
       width: 100%;
       justify-content: space-between;
-      margin-bottom: 1.6rem;
+      min-height: 42rem;
 
       .model {
+        max-height: fit-content;
+        overflow-x: auto;
         margin-right: 1.6rem;
       }
 
@@ -92,8 +96,8 @@
       /* height: fit-content; */
       justify-content: space-between;
       flex: 1;
-      min-height: 0;
-      overflow: auto;
+      min-height: fit-content;
+      /* overflow: hidden; */
     }
   }
 }

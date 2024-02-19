@@ -1,9 +1,10 @@
 .container {
-  height: 59.7rem;
+  // height: 100%;
   width: 26.8rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
   background: linear-gradient(
       360deg,
@@ -14,9 +15,9 @@
 
   .clock-container {
     cursor: pointer;
-    margin-top: 6rem;
+    // margin-top: 6rem;
     min-width: 14rem;
-    min-height: 14rem;
+    // min-height: 14rem;
     border-radius: 100%;
   }
   p {
@@ -25,15 +26,16 @@
     line-height: 39px;
     letter-spacing: 0em;
     text-align: center;
-    margin-top: 1.6rem;
+    // margin-top: 1.6rem;
   }
 
   img {
-    margin-top: 3.6rem;
+    // margin-top: 3.6rem;
   }
 
   .drop {
     min-width: 14rem;
+
     min-height: 14rem;
     border-radius: 100%;
     background: linear-gradient(
@@ -46,7 +48,7 @@
         rgba(255, 255, 255, 0.05),
         rgba(255, 255, 255, 0.05)
       );
-    margin-top: 8rem;
+    // margin-top: 8rem;
     border: 1px dashed #ffffff4d;
   }
 }

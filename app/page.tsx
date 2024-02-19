@@ -46,6 +46,7 @@ export default function Home() {
 
     document.onmousemove = (event) => {
       const newWidth = blockRef.current!.offsetWidth - event.clientX + dragX;
+
       if (newWidth < 520) return;
       blockRef.current!.style.width = newWidth + "px";
       dragX = event.clientX;
@@ -57,7 +58,7 @@ export default function Home() {
     };
   };
 
-  const dragMouseDowns = (e: any) => {
+  const dragMouseDownHor = (e: any) => {
     if (!blocksRef.current || !sliderVerRef.current) return;
 
     let dragY = e.clientY;
@@ -74,7 +75,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    blockRef.current!.style.width = blockRef.current!.offsetWidth + "px";
+    // blockRef.current!.style.width = blockRef.current!.offsetWidth + "px";
     return () => {
       document.onmousemove = null;
       document.onmouseup = null;
@@ -88,7 +89,7 @@ export default function Home() {
         <Shades />
       </div>
       <div className={styles.content}>
-        <div className={styles.first}>
+        <div className={styles.first} ref={blocksRef}>
           <Tasks />
           <div
             className={styles.slider}
@@ -105,7 +106,7 @@ export default function Home() {
         <div
           className={styles["slider-horizontal"]}
           ref={sliderVerRef}
-          onMouseDown={dragMouseDowns}
+          onMouseDown={dragMouseDownHor}
         >
           <div className={styles["slider-thumb-horizontal"]} />
         </div>
